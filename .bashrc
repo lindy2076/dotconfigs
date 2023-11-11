@@ -117,3 +117,4 @@ if ! shopt -oq posix; then
 fi
 
 alias anaconda='source ~/.conda.bashrc'
+export EDITOR=vim
