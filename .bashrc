@@ -118,3 +118,4 @@ fi
 
 alias anaconda='source ~/.conda.bashrc'
 export EDITOR=vim
+export GPG_TTY=$(tty)
