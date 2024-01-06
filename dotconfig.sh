@@ -12,11 +12,11 @@ FILES=($BASH_DIR $VIM_DIR)
 
 for d in "${DIRS[@]}"
 do
-	cp -r "$d" "${HOME}/dotconfigs"
+	cp -r "$d" "$(dirname $0)"
 done
 
 for f in "${FILES[@]}"
 do
-	cp "$f" "${HOME}/dotconfigs"
+	cp "$f" "$(dirname $0)"
 done
 

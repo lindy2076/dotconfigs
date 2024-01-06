@@ -43,8 +43,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id "~/.config/i3/change_brightness.sh + 5; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec --no-startup-id "~/.config/i3/change_brightness.sh - 5; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec --no-startup-id "~/.config/i3/brightness_manager.sh + 5; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec --no-startup-id "~/.config/i3/brightness_manager.sh - 5; notify-send 'brightness down'"
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -156,7 +156,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # back_and_forth
-workspace_auto_back_and_forth yes
+# workspace_auto_back_and_forth yes
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -197,6 +197,10 @@ bindsym $mod+r mode "resize"
 bar {
 	status_command i3status
 	tray_output none
+
+	colors {
+		# statusline #00AA00	
+	}
 }
 
 # firefox starts at ws2 and starts at startup
@@ -228,17 +232,20 @@ default_border pixel 4
 
 # colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #eb9e3f #eb9e3f #212121 #c9ed45   #eb9e3f 
+client.focused          #eb9e3f #ffd866 #212121 #c9ed45   #eb9e3f 
 # client.focused_inactive #333333 #333333 #ffffff #484e50   #5f676a
 client.unfocused        #ba7d32 #ba7d32 #111111 #aaaaaa   #777777
 # client.urgent           #2f343a #900000 #ffffff #900000   #900000
 # client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-# client.background       #ffffff
+# client.background       #403e41
+
 
 # gaps
 gaps inner 15
-gaps left 25
-gaps right 25
+gaps left 30
+gaps right 30
+gaps top 5
+gaps bottom 5
 
 workspace $ws2 gaps inner 0
 workspace $ws2 gaps outer 0
