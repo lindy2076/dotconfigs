@@ -247,8 +247,8 @@ exec_always --no-startup-id compton --backend glx --glx-no-stencil --vsync openg
 
 # startup
 # kitty to scratchpad
-exec --no-startup-id $term --name scratchterm -e neofetch
-for_window [instance="scratchterm"] move scratchpad
+exec --no-startup-id $term --class scratchterm --hold -e neofetch
+for_window [class="scratchterm"] move scratchpad
 
 
 # borders 
