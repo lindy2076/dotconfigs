@@ -267,8 +267,10 @@ default_border pixel 4
 
 # https://coolors.co/b9e2f0-f98d9a-525958-738c3b-243122
 client.focused            #F98D9A #F98D9A #243122 #B9E2F0 #F98D9A
-client.focused_inactive   #F98D9A #525958 #F98D9A #5F8C9B #525958
+client.focused_inactive   #FFC0C7 #FFC0C7 #243122 #5F8C9B #525958
 client.unfocused          #525958 #525958 #F98D9A #243122 #525958
+client.urgent             #FF374E #FF374E #444444 #243122 #FF374E
+client.background         #F98D9A
 
 
 # gaps
@@ -283,5 +285,5 @@ workspace $ws2 gaps outer 0
 workspace $ws5 gaps inner 30
 workspace $ws5 gaps outer 30
 
-
+bindsym $mod+t exec --no-startup-id "killall dunst; ~/.config/i3/notification_test.sh"
 
