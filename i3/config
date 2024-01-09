@@ -29,9 +29,21 @@ exec --no-startup-id dex --autostart --environment i3
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
+set $locker i3lock --keylayout 2 -c 00000000 \
+-i ~/Pictures/Wallpapers/wallhaven-doge.png -L -e --indicator \
+--inside-color=C5D157 --ring-color=243122 --insidever-color=B7EBFF \
+--ringver-color=0075A3 --insidewrong-color=F97683 --ringwrong-color=A7434D \
+--line-uses-inside --keyhl-color=E9CB8B --bshl-color=F97683 \
+--verif-color=2A3234 --wrong-color=2A3234 --layout-color=2A3234 \
+--time-color=2A3234 --date-color=2A3234 --greeter-color=2A3234 \
+--verif-text="hmm..." --noinput-text="clear" --wrong-text "WHO R U" \
+--time-font=FiraCode --date-font=FiraCode --layout-font=FiraCode \
+--verif-font=FiraCode --wrong-font=FiraCode --pass-screen-keys
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- $locker --nofork
+bindsym $mod+F10 exec --no-startup-id $locker
 
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
