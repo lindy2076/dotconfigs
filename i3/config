@@ -218,6 +218,12 @@ bar {
 
 	colors {
 		background #00000050
+		statusline #B7EBFF
+		separator  #E9CB8B
+
+		focused_workspace  #B7EBFF #B7EBFF #222627
+		urgent_workspace   #F97683 #F97683 #FCFCFC
+		inactive_workspace #222627 #222627 #D8B1C1
 	}
 }
 

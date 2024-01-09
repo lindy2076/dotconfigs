@@ -8,6 +8,9 @@
 
 general {
         colors = true
+		color_good = "#C5D157"
+		color_degraded = "#E9CB8B"
+		color_bad = "#C79275"
         interval = 5
 }
 
@@ -15,30 +18,31 @@ general {
 order += "wireless _first_"
 order += "battery all"
 order += "disk /"
-order += "load"
 order += "memory"
 order += "tztime local"
 
 wireless _first_ {
 #        format_up = "W: (%quality at %essid) %ip"
-        format_up = " %quality at %essid"
+        format_up = " %quality at %essid (%bitrate)"
         format_down = "no wifi :("
 }
 
 battery all {
         format = " %status %percentage %remaining"
+		format_percentage = "%0.1f%s"
+		status_chr = ""
+		status_bat = ""
+		status_full = " "
+		low_threshold = 15 
+		threshold_type = "percentage"
 }
 
 disk "/" {
-        format = " %avail"
-}
-
-load {
-        format = " %1min"
+        format = " / %avail"
 }
 
 memory {
-        format = " %used/%available"
+        format = " %used"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
